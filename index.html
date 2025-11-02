@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/fa62c117c7.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Caesar Cardona</title>
+  </head>
+
+
+  <body class="light" id="top">
+    <header class="header center">
+      <h3>
+     </h3>
+
+      <nav class="nav center">
+        <ul class="nav__list center">
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#news">interests</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#projects">projects</a>
+          </li>
+          <li class="nav__list-item">
+            <a class="link link--nav" href="#stack">skills</a>
+          </li>
+        </ul>
+
+
+
+        <button
+          type="button"
+          aria-label="toggle navigation"
+          class="btn btn--icon nav__hamburger"
+        >
+          <i aria-hidden="true" class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- About -->
+      <div class="about center">
+        <h1>Hello, I am <span class="about__name">Caesar Cardona.</span></h1>
+        <h2 class="about__role">Fullstack Developer.</h2>
+        <p class="about__desc">
+          Experienced in developing scalable solutions for machine learning, web development and data analytics.
+                  
+          Adaptable to any stack and versatile and eager to implement efficient solutions within limited timeframes
+   
+
+        </p>       
+        <p class="about__desc">
+        
+          Currently broadening horizons and gaining experience in the fields of Blockchain, Web3, Cybersecurity, and Networking.
+
+
+        </p>
+        
+        <div class="about__contact center">
+          <a href="mailto:caesar.cardona@gmail.com">
+            <span class="btn btn--outline">Contact</span>
+          </a>
+
+          <a
+            href="https://github.com/CaesarCardona"
+            aria-label="github"
+            class="link link--icon"
+          >
+            <i aria-hidden="true" class="fab fa-github"></i>
+          </a>
+
+
+
+        </div>
+       </div>
+
+<!-- Interests Section -->
+<section id="news" class="section news">
+  <h2 class="section__title">Interests</h2>
+  <div class="news__content">
+    <div class="news__main">
+      <div class="news__item">
+        <img src="./assets/neural-net.gif" alt="News GIF 1" class="news__gif zoom-on-hover" />
+        <h3 class="news__title">Neural Networks</h3>
+        <p class="news__text">Architecture, optimization and deployment.</p>
+      </div>
+      <div class="news__item">
+        <img src="./assets/rev-proxy.gif" alt="News GIF 2" class="news__gif zoom-on-hover" />
+        <h3 class="news__title">Cybersecurity</h3>
+        <p class="news__text">Authentification, authorization and API security.</p>
+      </div>
+      <div class="news__item">
+        <img src="./assets/solidity.png" alt="News GIF 3" class="news__gif zoom-on-hover" />
+        <h3 class="news__title">Web3</h3>
+        <p class="news__text">Decentralization and Blockchain applications.</p>
+      </div>
+    </div>
+    <aside class="news__slidebar">
+      <ul>
+        <!-- your slidebar items -->
+      </ul>
+    </aside>
+  </div>
+</section>
+
+
+     <!--Infrastructure as Code -->
+      <section id="projects" class="section projects">
+         
+        <h2 class="section__title">IaC and SaaS</h2>
+
+        <div class="projects__grid">
+          <div class="project">
+            <h3>K8s FastAPI</h3>
+            <p class="project__description">
+              Simple and reliable FastAPI orchestration for stable
+              and continuos availability
+            </p>
+            <ul class="project__stack">
+              <li class="project__stack-item">Kubernetes</li>
+              <li class="project__stack-item">FastAPI</li>
+              <li class="project__stack-item">Docker</li>
+            </ul>
+
+            <a
+              href="https://github.com/CaesarCardona/K8s-FastAPI"
+              aria-label="source code"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://github.com/CaesarCardona/K8s-FastAPI"
+              aria-label="live preview"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+
+          <div class="project">
+            <h3>IaS Flask</h3>
+            <p class="project__description">
+              IaS using terraform to seamlessly deploy Flask File uploading services.
+            </p>
+            <ul class="project__stack">
+              <li class="project__stack-item">Terraform</li>
+              <li class="project__stack-item">Flask</li>
+              <li class="project__stack-item">Python</li>
+            </ul>
+
+            <a
+              href="https://github.com/CaesarCardona/ias-flask"
+              aria-label="source code"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://github.com/CaesarCardona/ias-flask"
+              aria-label="live preview"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+          <div class="project">
+            <h3>Blockchain SaaS</h3>
+            <p class="project__description">
+              Enable smart contracts and transactions using Web3 Infrastructure.
+            </p>
+            <ul class="project__stack">
+              <li class="project__stack-item">Blockchain</li>
+              <li class="project__stack-item">Solidity</li>
+              <li class="project__stack-item">JavaScript</li>
+            </ul>
+
+            <a
+               <li class="project__private-item">Private repository</li>
+            </a>
+          </div>
+
+
+        <div class="projects__grid">
+          <div class="project">
+            <h3>Cloud Integration</h3>
+            <p class="project__description">
+              Machine Learning services and utilities with complete cloud integration.
+            </p>
+            <ul class="project__stack">
+              <li class="project__stack-item">Cloud</li>
+              <li class="project__stack-item">AWS</li>
+              <li class="project__stack-item">PyTorch</li>
+            </ul>
+
+            <a
+               <li class="project__private-item">Private repository</li>
+
+
+            </a>
+      </section>
+      <!-- Projects -->
+      <section id="projects" class="section projects">
+        <h2 class="section__title">Other Projects</h2>
+
+        <div class="projects__grid">
+          <div class="project">
+            <h3>AI Agent</h3>
+            <p class="project__description">
+              Use local LLMs to get fast answer based on documents
+              with the freedom of choosing which LLM to use, be it
+              suitable for sensitive documents and different formats.
+            </p>
+            <ul class="project__stack">
+              <li class="project__stack-item">Pytorch</li>
+              <li class="project__stack-item">Python</li>
+              <li class="project__stack-item">CUDA</li>
+            </ul>
+
+            <a
+              href="https://github.com/CaesarCardona/TextQuery"
+              aria-label="source code"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://github.com/CaesarCardona/TextQuery"
+              aria-label="live preview"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+
+          <div class="project">
+            <h3>Task Manager</h3>
+            <p class="project__description">
+              Example of a Task manager, but this time using Go together
+              with SQL for database management, able to demonstrate the
+              capabilities of this programming language and stack.
+            </p>
+            <ul class="project__stack">
+              <li class="project__stack-item">Go</li>
+              <li class="project__stack-item">MySQL</li>
+              <li class="project__stack-item">HTML</li>
+            </ul>
+
+            <a
+              href="https://github.com/CaesarCardona/Task-Todo"
+              aria-label="source code"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://github.com/CaesarCardona/Task-Todo"
+              aria-label="live preview"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+
+          <div class="project">
+            <h3>CNN Denoising</h3>
+            <p class="project__description">
+              Minimal CNN used to denoise images and learn how to use 
+              libraries like PyTorch without the overhead of having
+              to do excessive amounts of configuration.
+            </p>
+            <ul class="project__stack">
+              <li class="project__stack-item">Python</li>
+              <li class="project__stack-item">Torchvision</li>
+              <li class="project__stack-item">CUDA</li>
+            </ul>
+
+            <a
+              href="https://github.com/CaesarCardona/CNN-Denoise"
+              aria-label="source code"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://github.com/CaesarCardona/CNN-Denoise"
+              aria-label="live preview"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+
+          <div class="project">
+            <h3>PDF Data extraction</h3>
+            <p class="project__description">
+              Efficient image extractor to obtain images without quality loss from any 
+              PDF document.
+            </p>
+            <br><br>
+            <ul class="project__stack">
+              <li class="project__stack-item">Node.js </li>
+              <li class="project__stack-item">Go</li>
+              <li class="project__stack-item">HTML/CSS</li>
+            </ul>
+
+            <a
+              href="https://github.com/CaesarCardona/Image-Extractor"
+              aria-label="source code"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://github.com/CaesarCardona/Image-Extractor"
+              aria-label="live preview"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+            </a>         
+        </div>
+
+          </div>
+      </section>
+
+
+
+      <!-- Stack -->
+      <section class="section stack" id="stack">
+        <h2 class="section__title">Skills</h2>
+        <ul class="stack__list">
+          <li class="skills__list-item btn btn--plain">Rust</li>     
+          <li class="skills__list-item btn btn--plain">Go</li>    
+          <li class="skills__list-item btn btn--plain">Solidity</li>              
+          <li class="skills__list-item btn btn--plain">JavaScript</li>
+          <li class="skills__list-item btn btn--plain">TypeScript</li>
+          <li class="skills__list-item btn btn--plain">HTML</li>
+          <li class="skills__list-item btn btn--plain">CSS</li>
+          <li class="skills__list-item btn btn--plain">AWS</li>
+          <li class="skills__list-item btn btn--plain">C++</li>
+          <li class="skills__list-item btn btn--plain">React</li>
+          <li class="skills__list-item btn btn--plain">Python</li>
+          <li class="skills__list-item btn btn--plain">Machine Learning</li>
+          <li class="skills__list-item btn btn--plain">Pytorch</li>
+          <li class="skills__list-item btn btn--plain">Docker</li>
+          <li class="skills__list-item btn btn--plain">Kubernetes</li>
+          <li class="skills__list-item btn btn--plain">NGinx</li>
+          <li class="skills__list-item btn btn--plain">Git</li>
+          <li class="skills__list-item btn btn--plain">Gitlab</li>
+          <li class="skills__list-item btn btn--plain">Github</li>
+          <li class="skills__list-item btn btn--plain">CI/CD</li>
+          <li class="skills__list-item btn btn--plain">MySQL</li>
+          <li class="skills__list-item btn btn--plain">Flask</li>
+          <li class="skills__list-item btn btn--plain">FastAPI</li>
+          <li class="skills__list-item btn btn--plain">Terraform</li>
+        </ul>
+      </section>
+
+<p style="text-align: center; margin-top: 4em;">
+  <a href="#" class="link">Return to top</a>
+</p>
+    <footer class="footer">
+      <a
+        href="https://github.com/CaesarCardona"
+        class="link footer__link"
+      >
+        © 2023-2025 Placeholder Company Ltd.
+      </a>
+    </footer>
+
+    <div class="scroll-container">
+      <div class="scroll-top">
+        <a aria-label="Scroll up" href="#top">
+          <i aria-hidden="true" class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+
+
+    <script src="./script.js"></script>
+  </body>
+</html>
