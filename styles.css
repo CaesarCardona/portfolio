@@ -432,7 +432,7 @@ main {
   flex: 2;
   display: flex;
   flex-direction: row;
-  margin-left: -6rem; /* tweak this value */
+  margin-left: -12em; /* tweak this value */
   gap: 2rem;
 }
 
