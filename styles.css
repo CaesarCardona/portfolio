@@ -31,55 +31,29 @@ body {
   --clr-bg-alt: #fff;
   --clr-fg: #555;
   --clr-fg-alt: #444;
-  --clr-primary: #1e7f74; 
+  --clr-primary: #1e7f74;
   --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
 ::-moz-selection {
   background: var(--clr-primary);
   color: var(--clr-bg);
 }
 
-::-webkit-selection,
 ::selection {
   background: var(--clr-primary);
   color: var(--clr-bg);
 }
 
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
   line-height: 1.2;
   color: var(--clr-fg-alt);
 }
 
-h1 {
-  font-size: 4rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-h4 {
-  font-size: 1.3rem;
-}
-
-ul {
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-button {
-  cursor: pointer;
-}
+h1 { font-size: 4rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.3rem; }
 
 @media (max-width: 900px) {
   h1 {
@@ -87,13 +61,18 @@ button {
   }
 }
 
+ul { list-style-type: none; }
+a { text-decoration: none; }
+button { cursor: pointer; }
+
+
 /*===================
   buttons and links
 ===================*/
 
 .link {
   color: var(--clr-primary);
-  padding: 0 0 0.3em 0;
+  padding-bottom: 0.3em;
   position: relative;
 }
 
@@ -103,8 +82,7 @@ button {
 
 .link::before {
   content: "";
-  display: inline;
-  width: 0%;
+  width: 0;
   height: 0.2em;
   position: absolute;
   bottom: 0;
@@ -145,8 +123,8 @@ button {
   z-index: 1;
 }
 
-.btn--outline:focus,
-.btn--outline:hover {
+.btn--outline:hover,
+.btn--outline:focus {
   color: var(--clr-bg);
 }
 
@@ -155,9 +133,9 @@ button {
   position: absolute;
   background-color: var(--clr-primary);
   right: 100%;
+  top: 0;
   bottom: 0;
   left: 0;
-  top: 0;
   z-index: -1;
   transition: right 0.2s ease-in-out;
 }
@@ -170,11 +148,8 @@ button {
 .btn--plain {
   text-transform: initial;
   background-color: var(--clr-bg-alt);
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
-  border: 0;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px;
 }
-
-
 
 .btn--icon {
   padding: 0;
@@ -185,7 +160,6 @@ button {
 .btn--icon:focus {
   color: var(--clr-primary);
 }
-
 
 
 /*========
@@ -218,9 +192,7 @@ main {
 .section__title {
   text-align: center;
   margin-bottom: 1em;
-
 }
-
 
 .nav__list {
   margin-right: 1.5em;
@@ -275,7 +247,6 @@ main {
   grid-gap: 2em;
 }
 
-
 .project {
   padding: 2em;
   margin: 0 auto;
@@ -309,21 +280,12 @@ main {
   color: var(--clr-fg-alt);
 }
 
-.project__stack-item {
-  margin: 0.5em;
-  font-weight: 500;
-  font-size: 0.8rem;
-  color: var(--clr-fg-alt);
-}
-
 .project__private-item {
   margin: 0.5em;
   font-weight: 500;
   font-size: 1rem;
-  --custom-black: #000000;
-  color: var(--custom-black);
+  color: #000;
 }
-
 
 .project .link--icon {
   margin-left: 0.5em;
@@ -336,10 +298,9 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1em;           /* keeps your new spacing */
-  align-items: flex-start; /* align items at the top for neat piles */
+  gap: 1em;
+  align-items: flex-start;
 }
-
 
 .stack__list-item {
   margin: 0.5em;
@@ -371,9 +332,15 @@ main {
   transition: transform 0.2s ease-in-out;
 }
 
+
+/*=====================
+  MOBILE LAYOUT FIXES
+=====================*/
+
 @media (max-width: 600px) {
   .header {
-    height: 6em;
+    height: auto;
+    padding: 1em 0;
   }
 
   .section {
@@ -407,7 +374,8 @@ main {
   }
 
   .about {
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     margin-top: 2em;
   }
 
@@ -419,8 +387,20 @@ main {
   .scroll-container {
     display: none;
   }
+
+  .projects__grid {
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+  }
+
+  .project {
+    padding: 1.5em;
+  }
 }
 
+
+/*=====================
+  NEWS SECTION
+=====================*/
 
 .news__content {
   display: flex;
@@ -432,8 +412,10 @@ main {
   flex: 2;
   display: flex;
   flex-direction: row;
-  margin-left: -12em; /* tweak this value */
   gap: 2rem;
+  justify-content: center;   /* center horizontally */
+  align-items: center;        /* center vertically */
+  margin-left: 0;             /* remove forced shift */
 }
 
 
@@ -445,11 +427,13 @@ main {
 }
 
 .news__gif {
-  width: auto;
+  width: 100%;
   max-width: 500px;
-  height: 275px;
+  height: auto;
+  max-height: 275px;
   border-radius: 8px;
   box-shadow: var(--shadow);
+  object-fit: cover;
 }
 
 .zoom-on-hover {
@@ -470,10 +454,21 @@ main {
 .news__title {
   margin-top: 0.5rem;
   font-size: 1rem;
-  color: var(--clr-fg-alt); /* matches project headings */
-  background-color: transparent; /* avoid white background */
-}
+  color: var(--clr-fg-alt);
+  background-color: transparent;
 }
 
+/* Mobile fixes for news section */
+@media (max-width: 900px) {
+  .news__main {
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .news__gif {
+    max-width: 100%;
+    max-height: none;
+  }
+}
 
