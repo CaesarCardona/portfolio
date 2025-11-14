@@ -194,6 +194,7 @@ main {
   margin-bottom: 1em;
 }
 
+
 .nav__list {
   margin-right: 1.5em;
   display: flex;
@@ -204,9 +205,95 @@ main {
 }
 
 .nav__hamburger {
-  display: none;
-  width: 1em;
+  display: none; /* hide on desktop */
 }
+
+@media (max-width: 600px) {
+  .nav__hamburger {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+@media (max-width: 600px) {
+  .nav__list {
+    top: 3.5em;       /* distance from top (adjust as needed) */
+    left: 0.5em;      /* small horizontal offset */
+  }
+}
+  
+@media (max-width: 600px) {
+  .nav {
+    display: flex;
+    justify-content: flex-end;  /* push hamburger to right */
+    align-items: center;
+    padding: 0.5em 1em;         /* small top/bottom padding */
+    width: 100%;
+  }
+
+  /* Hamburger button stays on the right */
+  .nav__hamburger {
+    cursor: pointer;
+    margin-left: 1em;
+    z-index: 100;               /* stay above menu */
+  }
+
+  /* Nav list initially hidden */
+  .nav__list {
+    display: flex;
+    flex-direction: row;        /* horizontal items */
+    justify-content: flex-start; /* text starts from left inside each item */
+    gap: 1rem;                  /* spacing between items */
+    position: fixed;            /* overlay on top of content */
+    top: 3.5em;                 /* offset from top */
+    right: 0.5em;               /* offset from right edge */
+    background: rgba(255,255,255,0.95); /* optional light background */
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    opacity: 0;                 /* hidden by default */
+    pointer-events: none;
+    z-index: 99;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Show menu when toggled */
+  .display-nav-list {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Each menu item text left-aligned */
+  .nav__list-item {
+    text-align: left;
+    margin: 0;
+  }
+}
+
+ 
+  
+
+  .nav__list {
+    flex-direction: column;
+    padding: 0;
+    position: absolute;
+    top: 4em;
+    left: 0;
+    width: 0; /* collapsed by default */
+    overflow: hidden;
+    transition: width 0.3s ease;
+  }
+
+  .display-nav-list {
+    width: 100%; /* opens when toggled */
+  }
+
+  .nav__list-item {
+    margin: 1em 0;
+    text-align: center;
+  }
+}
+
 
 .about {
   flex-direction: column;
@@ -347,31 +434,49 @@ main {
     margin-top: 4em;
   }
 
+ /* default desktop nav (horizontal) */
+.nav__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 1.5em;
+  list-style: none;
+}
+
+/* mobile nav (max-width: 600px) */
+@media (max-width: 600px) {
   .nav__list {
-    flex-direction: column;
-    padding: 4em 0;
+    flex-direction: row;        /* horizontal */
+    justify-content: flex-start; /* align left */
     position: absolute;
-    right: 0;
-    left: 0;
-    top: 5em;
-    background-color: var(--clr-bg);
-    width: 0;
-    overflow: hidden;
-    transition: width 0.2s ease-in-out;
+    top: 0.5em;                 /* adjust distance from top */
+    left: 0.5em;                /* adjust distance from left */
+    width: auto;                 /* auto width for horizontal list */
+    background: transparent;     /* optional: remove background */
+    padding: 0;
+    margin: 0;
+    opacity: 0;                  /* hide by default */
+    pointer-events: none;        /* prevent clicks when hidden */
+    transition: opacity 0.3s ease;
   }
 
   .display-nav-list {
-    width: 100%;
+    opacity: 1;                  /* show menu when toggled */
+    pointer-events: auto;        /* enable clicks */
   }
 
   .nav__list-item {
-    margin: 0.5em 0;
+    margin: 0 0.8em;             /* horizontal spacing */
   }
 
   .nav__hamburger {
-    display: flex;
-    margin-left: 0.8em;
+    display: block;
+    font-size: 1.8rem;
+    cursor: pointer;
+    background: none;
+    border: none;
   }
+}
 
   .about {
     align-items: center;
@@ -434,7 +539,39 @@ main {
   border-radius: 8px;
   box-shadow: var(--shadow);
   object-fit: cover;
+
 }
+@media (max-width: 600px) {
+  .news__content {
+    display: flex;
+    flex-wrap: wrap;         /* allow items to wrap */
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .news__item {
+    flex: 0 0 auto;          /* do not stretch container */
+    width: auto;             /* let width be natural / controlled by image */
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  
+
+  .news__gif {
+    width: 120px;            /* fixed reasonable size */
+    height: auto;            /* maintain aspect ratio */
+    display: block;
+    margin: 0 auto;          /* center image in its container */
+  }
+
+  .news__text {
+    margin-top: 0.5rem;      /* spacing below image */
+    font-size: 0.9rem;
+  }
+}
+
+
 
 .zoom-on-hover {
   transition: transform 0.3s ease;
@@ -469,6 +606,63 @@ main {
   .news__gif {
     max-width: 100%;
     max-height: none;
+  }
+}
+
+/* Desktop image by default */
+.desktop-img {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+/* Mobile image hidden by default */
+.mobile-img {
+  display: none;
+}
+
+/* Zoom effect only for desktop */
+.zoom-on-hover {
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
+}
+.zoom-on-hover:hover {
+  transform: scale(1.08);
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .desktop-img {
+    display: none; /* hide desktop image */
+  }
+
+  .mobile-img {
+    display: block; 
+    width: 120px;  /* smaller image for mobile */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin: 0 auto; /* center */
+  }
+
+  .news__item {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .news__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .news__text {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
   }
 }
 
