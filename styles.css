@@ -210,7 +210,7 @@ main {
 /*====================
   MOBILE NAV (Right Slide)
 ====================*/
-@media (max-width: 600px) {
+@media (max-width: 900px) {
 
   /* Hamburger button top-right */
   .nav__hamburger {
@@ -449,10 +449,8 @@ main {
   font-size: 1rem;
   color: var(--clr-fg-alt);
   background-color: transparent;
-}
-
-/*========
-  DESKTOP/MOBILE IMAGE FIX
+}/*========
+  DESKTOP/MOBILE IMAGE FIX (Updated)
 ========*/
 /* Desktop: show only desktop images */
 .desktop-img {
@@ -463,8 +461,8 @@ main {
   display: none;
 }
 
-/* Mobile: swap visibility */
-@media (max-width: 600px) {
+/* Mobile: swap visibility (portrait or landscape) */
+@media (max-width: 900px) {
   .desktop-img {
     display: none !important;
   }
@@ -496,7 +494,19 @@ main {
   .news__text {
     font-size: 0.9rem;
   }
+
+  /* Mobile nav menu fixes */
+  .nav__list {
+    flex-direction: column;
+    padding: 4rem 1rem 1rem 1rem;
+  }
+
+  .nav__list-item {
+    margin: 1em 0;
+    text-align: left;
+  }
 }
+
 
 /*========
   MEDIA QUERIES
@@ -544,4 +554,5 @@ main {
 
   .news__text { font-size: 0.9rem; }
 }
+
 
