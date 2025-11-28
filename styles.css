@@ -370,8 +370,10 @@ main {
 }
 
 .stack__list-item {
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 0.5em;
+  border: 1px solid #696969;       /* Dark gray outline */
+  padding: 0.5em 1em;           /* Optional: spacing inside box */
 }
 
 
