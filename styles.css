@@ -315,6 +315,7 @@ main {
 }
 
 .project {
+  border-radius: 20px;  
   padding: 2em;
   margin: 0 auto;
   text-align: center;
@@ -369,6 +370,7 @@ main {
 }
 
 .stack__list-item {
+  border-radius: 5px;
   margin: 0.5em;
 }
 
@@ -433,7 +435,7 @@ main {
   max-width: 500px;
   height: auto;
   max-height: 275px;
-  border-radius: 8px;
+  border-radius: 20px;
   box-shadow: var(--shadow);
   object-fit: cover;
 }
